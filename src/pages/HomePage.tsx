@@ -1,6 +1,7 @@
 import HeroSection from '../components/sections/HeroSection';
 import SocialProofBar from '../components/sections/SocialProofBar';
 import PASSection from '../components/sections/PASSection';
+import ServicesOverview from '../components/sections/ServicesOverview';
 import OutcomesSection from '../components/sections/OutcomesSection';
 import HowItWorks from '../components/sections/HowItWorks';
 import ComparisonSection from '../components/sections/ComparisonSection';
@@ -21,25 +22,28 @@ export default function HomePage() {
       {/* 3. PAS — Pain-Agitate-Solve: specchio del dolore del cliente */}
       <PASSection />
 
-      {/* 4. OUTCOMES — 3 macro dream outcomes (non servizi tecnici) */}
+      {/* 4. SERVICES — Moduli del sistema AI */}
+      <ServicesOverview />
+
+      {/* 5. OUTCOMES — 3 macro dream outcomes (non servizi tecnici) */}
       <OutcomesSection />
 
-      {/* 5. HOW IT WORKS — Processo semplice in 5 step */}
+      {/* 6. HOW IT WORKS — Processo semplice in 5 step */}
       <HowItWorks />
 
-      {/* 6. COMPARISON — LitX Media vs Agenzia vs Freelancer */}
+      {/* 7. COMPARISON — LitX Media vs Agenzia vs Freelancer */}
       <ComparisonSection />
 
-      {/* 7. WALL OF LOVE — Tutte le testimonianze con risultati reali */}
+      {/* 8. WALL OF LOVE — Tutte le testimonianze con risultati reali */}
       <WallOfLove />
 
-      {/* 8. SECTORS — Settori serviti */}
+      {/* 9. SECTORS — Settori serviti */}
       <SectorsSection />
 
-      {/* 9. TRUST BADGES — Garanzie finali */}
+      {/* 10. TRUST BADGES — Garanzie finali */}
       <TrustBadges />
 
-      {/* 10. CLOSER — Mini-hero finale per chi è arrivato in fondo */}
+      {/* 11. CLOSER — Mini-hero finale per chi è arrivato in fondo */}
       <CloserSection />
     </>
   );

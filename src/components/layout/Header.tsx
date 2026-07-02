@@ -43,7 +43,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0a0a0a]/90 backdrop-blur-xl border-b border-white/5 shadow-2xl shadow-black/20'
+          ? 'bg-[#05070f]/72 backdrop-blur-2xl border-b border-secondary/10 shadow-2xl shadow-cyan-950/15'
           : 'bg-transparent'
       }`}
     >
@@ -69,7 +69,7 @@ export default function Header() {
                 >
                   <Link
                     to={link.to}
-                    className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                    className={`nav-glow-link flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                       isActive(link.to)
                         ? 'text-white bg-white/10'
                         : 'text-gray-400 hover:text-white hover:bg-white/5'
@@ -120,7 +120,7 @@ export default function Header() {
                 <Link
                   key={link.label}
                   to={link.to}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                  className={`nav-glow-link px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                     isActive(link.to)
                       ? 'text-white bg-white/10'
                       : 'text-gray-400 hover:text-white hover:bg-white/5'
@@ -156,9 +156,9 @@ export default function Header() {
         }`}
       >
         <nav className="flex flex-col p-6 gap-1">
-          {navLinks.map((link) =>
+          {navLinks.map((link, index) =>
             link.hasDropdown ? (
-              <div key={link.label}>
+              <div key={link.label} className={`mobile-menu-item ${mobileOpen ? 'is-open' : ''}`} style={{ transitionDelay: `${index * 55}ms` }}>
                 <button
                   onClick={() => setServicesOpen(!servicesOpen)}
                   className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-base font-medium transition-colors ${
@@ -198,11 +198,12 @@ export default function Header() {
               <Link
                 key={link.label}
                 to={link.to}
-                className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                className={`mobile-menu-item ${mobileOpen ? 'is-open' : ''} px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                   isActive(link.to)
                     ? 'text-white bg-white/10'
                     : 'text-gray-400'
                 }`}
+                style={{ transitionDelay: `${index * 55}ms` }}
               >
                 {link.label}
               </Link>
