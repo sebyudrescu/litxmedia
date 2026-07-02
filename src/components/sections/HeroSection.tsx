@@ -1,16 +1,38 @@
-import { ArrowRight, Star, TrendingUp, Bell, Clock } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import Button from '../ui/Button';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#030712]">
       {/* Background blobs */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/8 rounded-full blur-[120px] -translate-y-1/3 translate-x-1/4" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/[0.04] rounded-full blur-[100px]" />
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/3 translate-x-1/4" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/7 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/[0.05] rounded-full blur-[100px]" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
       </div>
+
+      {/* Premium neural video layer */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-full overflow-hidden lg:block">
+        <div className="absolute right-[-8%] top-1/2 h-[720px] w-[720px] -translate-y-1/2 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute inset-y-0 right-0 w-[62%]">
+          <video
+            className="absolute inset-0 h-full w-full object-contain opacity-90"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            poster="/images/neural-head-poster.jpg"
+          >
+            <source src="/videos/neural-head-360.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="absolute inset-y-0 right-0 w-[70%] bg-gradient-to-r from-[#030712] via-[#030712]/35 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#030712] to-transparent" />
+      </div>
+
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_72%_45%,rgba(0,209,255,0.12),transparent_34%),linear-gradient(90deg,rgba(3,7,18,0.98)_0%,rgba(3,7,18,0.88)_38%,rgba(3,7,18,0.52)_64%,rgba(3,7,18,0.84)_100%)]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -80,73 +102,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* RIGHT: Animated dashboard visual */}
-          <div className="relative animate-fade-up hidden lg:block" style={{ animationDelay: '200ms' }}>
-            <div className="relative">
-              {/* Notification card */}
-              <div className="mb-5 bg-gradient-to-r from-white/[0.08] to-white/[0.04] border border-white/10 rounded-2xl p-5 backdrop-blur-md hover:border-secondary/30 transition-colors">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                    <Bell className="w-5 h-5 text-secondary animate-bounce" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-white">Nuovo cliente prenotato</p>
-                    <p className="text-xs text-gray-400 mt-0.5">23:47 — mentre dormivi</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Review growth card */}
-              <div className="mb-5 bg-gradient-to-r from-white/[0.08] to-white/[0.04] border border-white/10 rounded-2xl p-5 backdrop-blur-md hover:border-primary/30 transition-colors">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-semibold text-white">Le tue recensioni</span>
-                  <TrendingUp className="w-4 h-4 text-primary" />
-                </div>
-                <div className="flex items-center gap-4">
-                  <div>
-                    <p className="text-2xl font-bold text-gray-400">⭐ 8</p>
-                    <p className="text-xs text-gray-500">Prima</p>
-                  </div>
-                  <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-primary to-secondary rounded-full" style={{ width: '82%' }} />
-                  </div>
-                  <div className="text-right">
-                    <p className="text-2xl font-bold gradient-text">45</p>
-                    <p className="text-xs text-gray-500">Oggi</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Time saved card */}
-              <div className="mb-5 bg-gradient-to-r from-white/[0.08] to-white/[0.04] border border-white/10 rounded-2xl p-5 backdrop-blur-md hover:border-green-400/30 transition-colors">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-semibold text-white">Tempo risparmiato</p>
-                    <p className="text-xs text-gray-400 mt-0.5">Questa settimana</p>
-                  </div>
-                  <div className="text-right flex items-center gap-2">
-                    <p className="text-3xl font-bold text-green-400">12h</p>
-                    <Clock className="w-4 h-4 text-green-400" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Revenue metric card */}
-              <div className="bg-gradient-to-r from-white/[0.08] to-white/[0.04] border border-white/10 rounded-2xl p-5 backdrop-blur-md hover:border-accent/30 transition-colors">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-semibold text-white">Clienti recuperati</p>
-                    <p className="text-xs text-gray-400 mt-0.5">Questo mese</p>
-                  </div>
-                  <p className="text-3xl font-bold text-accent">+€2.400</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating glow accents */}
-            <div className="absolute -top-8 -left-8 w-24 h-24 bg-primary/10 rounded-full blur-2xl animate-pulse" style={{ animationDuration: '3s' }} />
-            <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s', animationDelay: '1s' }} />
-          </div>
+          <div className="hidden lg:block" aria-hidden="true" />
         </div>
       </div>
     </section>
