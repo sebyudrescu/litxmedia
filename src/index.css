@@ -57,6 +57,60 @@
   animation: slideUp 0.4s ease-out forwards;
 }
 
+.hero-cinematic-scroll {
+  --hero-scroll-p: 0;
+  --hero-intro-opacity: 1;
+  --hero-intro-y: 0px;
+  --hero-problem-opacity: 0;
+  --hero-problem-y: 26px;
+  --hero-modules-opacity: 0;
+  --hero-modules-y: 34px;
+  --hero-final-opacity: 0;
+  --hero-final-y: 24px;
+  --hero-video-scale: 1;
+}
+
+.hero-scroll-scrub-video {
+  transform: scale(var(--hero-video-scale));
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.hero-scroll-intro {
+  opacity: var(--hero-intro-opacity);
+  transform: translate3d(0, var(--hero-intro-y), 0);
+  transition: opacity 90ms linear, transform 90ms linear;
+  will-change: opacity, transform;
+}
+
+.hero-scroll-problem {
+  opacity: var(--hero-problem-opacity);
+  transform: translate3d(0, var(--hero-problem-y), 0) scale(calc(0.985 + var(--hero-problem-opacity) * 0.015));
+  transition: opacity 90ms linear, transform 90ms linear;
+  will-change: opacity, transform;
+}
+
+.hero-scroll-modules {
+  opacity: var(--hero-modules-opacity);
+  transform: translate3d(0, var(--hero-modules-y), 0);
+  transition: opacity 90ms linear, transform 90ms linear;
+  will-change: opacity, transform;
+}
+
+.hero-scroll-final {
+  opacity: var(--hero-final-opacity);
+  transform: translate3d(0, var(--hero-final-y), 0) translateY(-50%);
+  transition: opacity 90ms linear, transform 90ms linear;
+  will-change: opacity, transform;
+}
+
+.hero-cinematic-gradient {
+  background: linear-gradient(105deg, #ffffff 0%, #00d1ff 45%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .hero-neural-stage {
   --hero-cycle: 7.016s;
 }
